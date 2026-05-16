@@ -1,0 +1,308 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+.container{
+    height : 100vh;
+    display: grid;
+    grid-template-columns: 15vw 85vw;
+    grid-template-rows: 100vh;
+}
+    .leftpanel{
+        background-color:rgb(89, 167, 245);
+        display: grid;
+        grid-template: 1fr 2.5fr 1.5fr 1fr 1fr/ 1fr;
+        color: white;
+        font-family: roboto;
+        gap: 10px;
+    }
+        .dashboard,
+        .option{
+            display: grid;
+            grid-template: 1fr / 30px 1fr;
+            align-items: center;
+            column-gap: 12px;
+            margin-left: 10px;
+        }
+            .leftpanel svg{
+                fill: white;
+                height: 24px;
+                width: 24px;
+                justify-self: center;
+            }
+            #dashboardIcon{
+                height: 30px;
+                width: 30px;
+            }
+            #dashText{
+                font-size: 120%;
+                font-weight: bold;
+        }
+            .leftpanel p{
+                margin: 0;
+            }
+        .firstoptions{
+            display:grid;
+            grid-template: repeat(6, 1fr)/ 1fr;
+            align-items: start;
+        }
+        .secondoptions{
+            display: grid;
+            grid-template: repeat(3, 1fr)/ 1fr;
+            align-items: start;
+            margin-top: 10px;
+        }
+    .rightside{
+        background-color:rgb(255, 255, 255);
+        display: grid;
+        grid-template: repeat(5, 1fr)/ repeat(3,1fr);
+        background-color:rgb(225, 225, 225);
+        padding-left: 10px;
+        font-family: roboto;
+        grid-template-areas:
+            "topbar topbar topbar"
+            "bottomleft bottomleft bottomright"
+            "bottomleft bottomleft bottomright"
+            "bottomleft bottomleft bottomright"
+            "bottomleft bottomleft bottomright";
+    }
+        #topbar{
+            grid-area: topbar;
+            background-color: white;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            display: grid;
+            grid-template: 1fr 1fr/ repeat(3, 1fr);
+            margin-bottom: 0;
+            grid-template-areas: 
+            "search search username"
+            "hello . option";
+        }
+        .username{
+            grid-area: username;
+            font-weight: bolder;
+            display: grid;
+            grid-template: 1fr/ 1.33fr .66fr 1fr;
+            grid-template-areas: "bell profile morgan";
+        }
+            #username{
+                grid-area: morgan;
+                justify-self: start;
+                align-self: center;
+            }
+            .username button{
+                grid-area: bell;
+                height: 25px;
+                width: 25px;
+                border: none;
+                justify-self: end;
+                align-self: center;
+            }
+            #profilePicture{
+                grid-area: profile;
+                height: 50px;
+                width: 50px;
+                border-radius: 50%;
+                justify-self: center;
+                align-self: center;
+            }
+        .helloMorgan{
+            grid-area: hello;
+            display: grid;
+            grid-template: 1fr/ .5fr 1.5fr;
+            grid-template-areas:
+            "pfp helloThing";
+
+        }
+            .pfp{
+                grid-area: pfp;
+                height: 80px;
+                width: 80px;
+                border-radius: 50%;
+                justify-self: center;
+                align-self: top;
+            }
+                .pfp img{
+                    height: 100%;
+                    width: 100%;
+                    border-radius: 50%;
+                }
+                    #hi{
+                        align-self: end;
+                        justify-self: start;
+                        margin-bottom: 0;
+                    }
+                    #mo{
+                        align-self: start;
+                        justify-self: start;
+                        font-size: 120%;
+                        font-weight: bolder;
+                        margin-top: 0;
+                    }  
+            .helloThing{
+                grid-area: helloThing;
+                display: grid;
+                grid-template: 1fr 1fr/ 1fr;
+                justify-self: start;
+                align-self: center;
+            }
+
+        .optionButtons{
+            grid-area: option;
+        }
+        .inputField{
+            grid-area: search;
+            display: grid;
+            grid-template: 1fr/ .2fr 1fr;
+            grid-template-areas: "icon input";
+        }
+            #search{
+                background-color: rgb(197, 227, 245);
+                border-radius: 15px;
+                grid-area: input;
+                border: none;
+                height: 30px;
+                align-self: center;
+                width: 90%;
+                justify-self: start;
+            }
+            #icon{
+                grid-area: icon;
+                height: 30px;
+                width: 30px;
+                margin-left: 15px;
+                justify-self: end;
+                align-self: center;
+            }
+        .optionButton{
+                background-color: rgb(70, 155, 241);
+                color: white;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                border: none;
+                width: 100px;
+                height: 40px;
+                border-radius: 45px;
+                font-weight: bold;
+                margin: 10px; 
+        }
+        .bottomleft{
+            grid-area: bottomleft;
+            display: grid;
+            grid-template-rows: auto repeat(3, 1fr);
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+            .title{
+                grid-column: 1 / -1;
+                font-size: 135%;
+                font-weight: bold;
+                margin-bottom: 0;
+            }
+
+            .project{
+                border-radius: 8px;
+                border-left: 7px outset rgb(237, 208, 19);
+                background-color: white;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+                padding:18px;
+                font-family: roboto;
+
+            }
+                .iconsForUser{
+                    justify-self:end;
+                }
+                    .iconsForUser svg{
+                        fill : black;
+                        height: 20px;
+                        width: 20px;
+                        justify-self: center;
+                        padding: 1px;
+                    }
+    .bottomright{
+        grid-area: bottomright;
+        display: grid;
+        grid-template: auto 1fr auto 1fr/ 1fr;
+        margin-left: 25px;
+    }
+        .announce{
+                display: grid;
+                grid-template: repeat(3, 1fr)/ 1fr;
+                border-radius: 2%;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+                background-color: white;
+                width: 300px;
+        }
+            .annoucement{
+                    font-family: roboto;
+                    font-size: smaller;
+                    margin-left: 5px;
+                }
+        .trends{
+            display: grid;
+            grid-template: repeat(4, 1fr)/ 1fr;
+            gap: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            width: 300px;
+            border-radius: 8px;
+        }
+            .trending{
+                background-color: white;
+                display: grid;
+                grid-template: 1fr/ 50px 1fr;
+                gap:5px;
+                font-family: roboto;
+                font-size: smaller;
+                padding-left: 5px;
+            }
+                .trending img{
+                    height: 40px;
+                    width: 40px;
+                    border-radius: 50%;
+                    align-self: center;
+                    margin-right: 5px;
+                }
+#heading{
+    font-size: 100%;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+#description{
+    font-size: 90%;
+    font-weight: lighter;
+    margin-top: 0;
+    color: grey;
+}
+hr{
+    border: none;
+    height: 1px;
+    background: #d3d3d3;
+}
+button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    /* Often necessary to remove the focus outline too */
+    outline: none;
+}
+input:focus {
+    outline: none;
+    border: none;
+    box-shadow: none;
+}
+#titles{
+    font-size: 135%;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+#announcementText{
+    font-size: smaller;
+    color: grey;
+    margin-top: 2px;
+}
+#projectOwner{
+    margin-bottom:0;
+}
+#projectMade{
+    margin-top:0;
+    color: grey;
+}
